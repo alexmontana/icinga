@@ -21,7 +21,7 @@ echo "Include conf/icinga.conf" >> /etc/httpd/conf/httpd.conf
 htpasswd -nb icingaadmin icingaadmin > /opt/icinga/etc/htpasswd.users
 
 /etc/init.d/httpd restart
-killall -9 icinga || /opt/icinga/bin/icinga -d /opt/icinga/etc/icinga.cfg
+killall -9 icinga; /opt/icinga/bin/icinga -d /opt/icinga/etc/icinga.cfg
 
 wget https://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz#_ga=1.2791600.1279688733.1477871534 --no-check-certificate
 tar -xzf nagios-plugins-2.1.2.tar.gz 
