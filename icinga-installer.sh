@@ -33,7 +33,7 @@ make install
 /bin/cat << EndOfMessage >> /opt/icinga/etc/objects/commands.cfg
 define command{
         command_name    run_logs_collector
-        command_line    /home/logs_events.sh $SERVICESTATE$ $SERVICESTATETYPE$ $SERVICEATTEMPT$ $HOSTADDRESS$
+        command_line    /home/logs_events.sh \$SERVICESTATE\$ \$SERVICESTATETYPE\$ \$SERVICEATTEMPT\$ \$HOSTADDRESS\$
         }
 EndOfMessage
 
