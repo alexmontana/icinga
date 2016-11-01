@@ -29,3 +29,13 @@ cd nagios-plugins-2.1.2
 ./configure --prefix=/opt/icinga/ --with-nagios-user=daemon --with-nagios-group=daemon
 make
 make install
+
+/bin/cat << EndOfMessage >> /opt/icinga/etc/objects/commands.cfg
+define command{
+        command_name    run_logs_collector
+        command_line    /home/logs_events.sh $SERVICESTATE$ $SERVICESTATETYPE$ $SERVICEATTEMPT$ $HOSTADDRESS$
+        }
+EndOfMessage
+
+/opt/icinga/bin/icinga -v /opt/icinga/etc/icinga.cfg
+killall -9 icinga; /opt/icinga/bin/icinga -d /opt/icinga/etc/icinga.cfg
