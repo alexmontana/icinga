@@ -9,7 +9,7 @@ wget -O icinga.tar.gz https://sourceforge.net/projects/icinga/files/icinga/1.10.
 tar -xzf icinga.tar.gz
 cd icinga-1.10.1
 
-./configure --prefix=/opt/icinga --with-icinga-user=icinga --with-icinga-group=icinga --with-httpd-conf=/etc/httpd/conf 
+./configure --prefix=/opt/icinga --with-icinga-user=daemon --with-icinga-group=daemon --with-httpd-conf=/etc/httpd/conf 
  make all
  make install
  make install-config
