@@ -31,12 +31,12 @@ cd $WORKING_DIR
 scp -rp root@$TARGET_HOST:/var/log/mysqld.log ./"$CURR_DATE"_mysqld.log
 scp -rp root@$TARGET_HOST:/var/log/httpd/access_log ./"$CURR_DATE"_access_log
 
-if [ -e "$CURR_DATE"_mysqld.log.tar.gz ]
+if [ -e "$CURR_DATE"_mysqld.log ]
   then
   tar -czf "$CURR_DATE"_mysqld.log.tar.gz "$CURR_DATE"_mysqld.log
 fi
 
-if [ -e "$CURR_DATE"_access_log.tar.gz ]
+if [ -e "$CURR_DATE"_access_log ]
   then
   tar -czf "$CURR_DATE"_access_log.tar.gz "$CURR_DATE"_access_log
 fi
