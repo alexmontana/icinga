@@ -10,9 +10,14 @@ yum -y install libdbi-devel libdbi httpd wget zip unzip
 # tar -xzf icinga.tar.gz
 #cd icinga-1.10.1
 
-wget -O icinga.zip https://codeload.github.com/Icinga/icinga2/zip/master
-unzip icinga.zip
-cd icinga2-master/
+#wget -O icinga.zip https://codeload.github.com/Icinga/icinga2/zip/master
+#unzip icinga.zip
+#cd icinga2-master/
+
+wget -O icinga.tar.gz https://fossies.org/linux/misc/old/icinga-core-1.14.2.tar.gz --no-check-certificate
+tar -xzf icinga.tar.gz
+cd icinga-core-1.14.2
+
 
 ./configure --prefix=/opt/icinga --with-icinga-user=daemon --with-icinga-group=daemon --with-httpd-conf=/etc/httpd/conf 
  make all
