@@ -3,7 +3,8 @@
 cd /usr/local/src
 rm -rf /usr/local/src/*
 
-yum -y install libdbi-devel libdbi httpd
+yum -y update
+yum -y install libdbi-devel libdbi httpd wget zip unzip
 
 #wget -O icinga.tar.gz https://sourceforge.net/projects/icinga/files/icinga/1.10.1/icinga-1.10.1.tar.gz/download --no-check-certificate
 # tar -xzf icinga.tar.gz
